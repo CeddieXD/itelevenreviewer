@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="title" content="IT11Reviewer" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://itelevenreviewer.web.app/" />
+  <meta property="og:title" content="IT11Reviewer" />
+  <meta property="og:description"
+    content="2-IT11 Reviewer — A free online reviewer for City College of Calamba students. Practice quizzes in DBMS, MySQL, Web Design & Programming, and Pathfit. Learn smarter, prepare faster, and boost your exam performance." />
+  <meta property="og:site_name" content="IT11Reviewer">
+  <meta property="og:image" content="https://itelevenreviewer.web.app//preview.png" />
+  <meta property="twitter:url" content="https://itelevenreviewer.web.app/" />
+  <meta property="twitter:title" content="IT11Reviewer" />
+  <meta property="twitter:description"
+    content="2-IT11 Reviewer — A free online reviewer for City College of Calamba students. Practice quizzes in DBMS, MySQL, Web Design & Programming, and Pathfit. Learn smarter, prepare faster, and boost your exam performance." />
+  <meta property="twitter:image" content="https://itelevenreviewer.web.app/preview.png" />
+
+  <link rel="icon" type="image/png" href="Logo.png">
+  <!-- Firebase SDKs -->
+  <!-- <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script> -->
+  <!-- Your Firebase config file -->
+  <script type="module" src="js/firebase.js"></script>
+  <!-- Google Tag Manager -->
+  <script>
+  (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MVTBSW8D');
+    </script>
+  <!-- End Google Tag Manager -->
+  <!-- Google tag (gtag.js) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-N5KGR3EDEL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-N5KGR3EDEL');
+  </script>
+
+  <script>
+    // Default consent (denied until user accepts)
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'personalization_storage': 'denied',
+      'functionality_storage': 'denied',
+      'security_storage': 'denied'
+    });
+  </script>
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>2-IT11 Reviewer</title>
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description"
+    content="2-IT11 Reviewer — A free online reviewer for City College of Calamba students. Practice quizzes in DBMS, MySQL, Web Design & Programming, and Pathfit. Learn smarter, prepare faster, and boost your exam performance.">
+  <meta name="keywords"
+    content="2IT11 reviewer, DBMS quiz, MySQL reviewer, Web Design and Programming quiz, Pathfit reviewer, City College of Calamba, CCC reviewer, IT student reviewer, online reviewer, study quiz app, itelevenreviewer, it11reviewer, iteleven">
+  <meta name="author" content="C.V. Bendol • City College of Calamba">
+
+  <meta name="google-site-verification" content="hOp2i9u5sA3PSnD6w11deFyMf8IgGLewztI63SocLCg" />
+
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) 
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVTBSW8D" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+   End Google Tag Manager (noscript) -->
+
+    <!-- DASHBOARD -->
+<header id="dashHeader">
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+    <div>
+      <h1 style="margin:0;display:inline-block;">Reviewer Dashboard</h1>
+      <div class="sub">Select a subject to review</div>
+    </div>
+
+    <!-- Report button on the right -->
+    <div style="display:flex; align-items:center; gap:8px;">
+      <!-- <button id="reportBtn" class="soft" title="Report an issue" style="font-size:13px; padding:8px 10px;">
+        🚩 Report
+      </button> -->
+      <button class="darkmode-toggle" id="darkToggle">🌙</button>
+      <button class="darkmode-toggle" id="pinkToggle" style="top: 100px;">🎀</button>
+    </div>
+  </div>
+</header>
+
+    <header id="quizHeader" style="display:none">
+      <div class="row" style="justify-content:space-between">
+        <div>
+          <h1 id="quizTitle">IT211 Quiz</h1>
+          <div class="sub" id="subQuizTitle">—</div>
+        </div>
+        <div>
+          <button class="soft back-btn" onclick="backToDashboard()">← Back</button>
+        </div>
+      </div>
+    </header>
+
+<div class="wrap">
+    <main id="dashboard">
+      <section class="card grid">
+        <h1 class="cardfortitle subject-title-banner">DBMS & MySQL</h1>
+        <div class="card subject-card" data-subject="DBMS & MySQL" data-items="40" data-time="20">
+          <div class="subject-title">DBMS & MySQL WorkBook 1-2</div>
+          <div class="subject-sub">40 items • ~20 minutes</div>
+        </div>
+
+        <div class="card subject-card" data-subject="DBMS & MySQL2" data-items="40" data-time="20">
+          <div class="subject-title">DBMS & MySQL WorkBook 3-4</div>
+          <div class="subject-sub">40 items • ~20 minutes</div>
+        </div>
+
+        <div class="card subject-card" data-subject="DBMS & MySQL3" data-items="40" data-time="20">
+          <div class="subject-title">DBMS & MySQL WorkBook 5</div>
+          <div class="subject-sub">40 items • ~20 minutes</div>
+        </div>
+
+        <div class="card subject-card" data-subject="DBMS & MySQL4" data-items="47" data-time="20">
+          <div class="subject-title">MySQL Naming Conventions & Data Types Quiz</div>
+          <div class="subject-sub">47 items • ~20 minutes</div>
+        </div>
+      </section>
+
+      <section class="card grid">
+        <h1 class="cardfortitle subject-title-banner">Web Design and Programming</h1>
+        <div class="card subject-card" data-subject="Web Design & Programming" data-items="40" data-time="20">
+          <div class="subject-title">Web Design & Programming - Internet Essentials</div>
+          <div class="subject-sub">40 items • ~20 minutes</div>
+        </div>
+
+        <div class="card subject-card" data-subject="Web Design & Programming2" data-items="40" data-time="20">
+          <div class="subject-title">Web Design & Programming - Exploring HTML</div>
+          <div class="subject-sub">40 items • ~20 minutes</div>
+        </div>
+
+        <div class="card subject-card" data-subject="Web Design & Programming3" data-items="40" data-time="20">
+          <div class="subject-title">Web Design & Programming - HTML Embedded Elements</div>
+          <div class="subject-sub">40 items • ~20 minutes</div>
+        </div>
+
+        <div class="card subject-card" data-subject="Web Design & Programming4" data-items="40" data-time="20">
+          <div class="subject-title">Web Design & Programming - HTML Tables and Forms</div>
+          <div class="subject-sub">40 items • ~20 minutes</div>
+        </div>
+      </section>
+      <section class="card grid">
+        <h1 class="cardfortitle subject-title-banner">Pathfit</h1>
+        <div class="card subject-card" data-subject="Pathfit" data-items="34" data-time="20">
+          <div class="subject-title">Pathfit</div>
+          <div class="subject-sub">34 items • ~20 minutes</div>
+        </div>
+      </section>
+      <section class="card grid">
+        <h1 class="cardfortitle subject-title-banner">Rizal</h1>
+        <div class="card subject-card" data-subject="Rizal" data-items="23" data-time="10">
+          <div class="subject-title">Rizal – Lesson 1</div>
+          <div class="subject-sub">23 items • ~10 minutes</div>
+        </div>
+        <div class="card subject-card" data-subject="Rizal2" data-items="27" data-time="15">
+          <div class="subject-title">Rizal – Lesson 2</div>
+          <div class="subject-sub">27 items • ~15 minutes</div>
+        </div>
+        <div class="card subject-card" data-subject="Rizal3" data-items="24" data-time="15">
+          <div class="subject-title">Rizal – Lesson 3</div>
+          <div class="subject-sub">27 items • ~15 minutes</div>
+        </div>
+        <div class="card subject-card" data-subject="Rizal3" data-items="15" data-time="10">
+          <div class="subject-title">Rizal – Lesson 4</div>
+          <div class="subject-sub">15 items • ~10 minutes</div>
+        </div>
+        <div class="card subject-card" data-subject="Rizal3" data-items="20" data-time="15">
+          <div class="subject-title">Rizal – Lesson 5</div>
+          <div class="subject-sub">20 items • ~15 minutes</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- QUIZ PAGE -->
+    <main id="quizPage" style="display:none">
+      <section id="intro" class="card pad">
+        <div class="grid">
+          <div class="row" style="justify-content:space-between">
+            <div class="pill">Mode: <strong id="modeLabel">All Questions</strong></div>
+            <div class="badge" aria-live="polite"><span id="timer">20:00</span></div>
+            <div class="pill" id="progressPill">0 / 0 answered</div>
+          </div>
+
+          <div class="progress" aria-hidden="true">
+            <div id="bar" class="bar"></div>
+          </div>
+
+          <p class="muted" id="anotherInfo"></p>
+
+          <div class="controls">
+            <button id="startBtn" class="primary">Start Quiz</button>
+            <button id="shuffleBtn" class="soft">Shuffle Questions</button>
+            <button id="resetBtn" class="warn" disabled>Reset</button>
+          </div>
+
+          <div class="hint muted">Tip: Your answers are auto-saved locally.</div>
+        </div>
+      </section>
+
+      <section id="quiz" class="grid"></section>
+
+      <section id="actions" class="card pad" style="display:none">
+        <div class="controls">
+          <button id="submitBtn" class="primary">Submit</button>
+          <button id="reviewWrongBtn" class="soft" disabled>Review Incorrect</button>
+          <button id="reviewUnansweredBtn" class="soft" disabled>Review Unanswered</button>
+          <button id="reviewCorrectBtn" class="soft" disabled>Review Correct</button>
+          <button id="showAllBtn" class="soft" style="display:none">Show All</button>
+          <button id="resetBtn2" class="warn">Reset</button>
+        </div>
+        <div id="result" class="muted" style="margin-top:8px">The result will appear here.</div>
+      </section>
+    </main>
+
+    <!-- RECORDS PAGE -->
+    <main id="recordsPage" style="display:none">
+      <section class="card pad">
+        <h2>📊 Previous Records</h2>
+        <p class="muted">Your quiz results are saved locally on this browser.</p>
+        <div id="recordsList" class="grid"></div>
+        <div class="controls" style="margin-top:12px;">
+          <button class="soft" onclick="backToDashboard()">← Back to Dashboard</button>
+          <button class="warn" onclick="clearRecords()">🗑 Clear All Records</button>
+        </div>
+      </section>
+    </main>
+
+  </div>
+  <div class="footer">© City College of Calamba • C.V. Bendol • 2IT11</div>
+  
+
+  <!-- quiz data (sets window.dbmsQuiz) -->
+  <script src="js/utils.js"></script>
+  <script src="js/domRefs.js"></script>
+  <script src="js/subjects.js"></script>
+  <script src="js/quizController.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+/* global clearRecords button used inline in the HTML:
+   <button class="warn" onclick="clearRecords()">🗑 Clear All Records</button>
+*/
+ window.clearRecords = function () {
+   if (!confirm("Clear all saved quiz records?")) return;
+
+   // Remove only history keys (don't wipe theme / cookie consent)
+   Object.keys(localStorage).forEach(key => {
+     if (key.startsWith('it211_history_')) localStorage.removeItem(key);
+   });
+
+   // Update the UI if records list is visible
+   const listEl = document.getElementById('recordsList');
+   if (listEl) listEl.innerHTML = '<p>No records yet.</p>';
+
+   // If you want to hide the recordsPage and show dashboard:
+ //   const recordsPage = document.getElementById('recordsPage');
+ //   const dashboard = document.getElementById('dashboard');
+ //   if (recordsPage) recordsPage.style.display = 'none';
+ //   if (dashboard) dashboard.style.display = 'flex';
+ };
+</script>
+
+
+  <script>
+    const darkToggle = document.getElementById('darkToggle');
+    const pinkToggle = document.getElementById('pinkToggle');
+    const body = document.body;
+
+    // Load saved preferences
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark');
+      darkToggle.textContent = '☀️';
+    }
+    if (localStorage.getItem('pinkMode') === 'true') {
+      body.classList.add('pink');
+      pinkToggle.textContent = '❌'; // active
+    }
+
+    // Dark toggle
+    darkToggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      darkToggle.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('darkMode', isDark);
+    });
+
+    // Pink toggle
+    pinkToggle.addEventListener('click', () => {
+      body.classList.toggle('pink');
+      const isPink = body.classList.contains('pink');
+      pinkToggle.textContent = isPink ? '❌' : '🎀';
+      localStorage.setItem('pinkMode', isPink);
+    });
+
+  </script>
+
+  <div id="consent-banner" style="position:fixed;bottom:0;left:0;right:0;
+  background:#111827;color:#fff;padding:14px;text-align:center;z-index:9999;">
+    This site uses cookies for analytics.
+    <button id="acceptCookies" style="margin-left:10px;padding:6px 12px;
+  background:#22c55e;border:none;border-radius:6px;color:#fff;cursor:pointer;">
+      Accept
+    </button>
+    <button id="rejectCookies" style="margin-left:6px;padding:6px 12px;
+  background:#ef4444;border:none;border-radius:6px;color:#fff;cursor:pointer;">
+      Optional
+    </button>
+  </div>
+
+  <script>
+    const banner = document.getElementById('consent-banner');
+
+    // Check saved consent
+    const consent = localStorage.getItem('cookieConsent');
+    if (consent === 'accepted') {
+      // User already accepted → hide banner and enable consent
+      banner.style.display = 'none';
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted',
+        'personalization_storage': 'granted'
+      });
+    }
+
+    // Accept button → save & grant
+    document.getElementById('acceptCookies').onclick = function () {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted',
+        'personalization_storage': 'granted',
+        'functionality_storage': 'granted',
+        'security_storage': 'granted'
+      });
+      localStorage.setItem('cookieConsent', 'accepted');
+      banner.style.display = 'none';
+    };
+
+    // Reject button → don’t save, show again on refresh
+    document.getElementById('rejectCookies').onclick = function () {
+      gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted',
+        'personalization_storage': 'granted',
+        'functionality_storage': 'granted',
+        'security_storage': 'granted'
+      });
+      banner.style.display = 'none';
+      // no localStorage save → banner will appear next refresh
+    };
+  </script>
+</body>
+</html>

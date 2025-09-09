@@ -1,0 +1,51 @@
+// dbms-quiz2.js
+window.dbmsQuiz2 = {
+  title: "IT211 – SQL DDL & DML",
+  durationSeconds: 1200,
+  description: "Covers: Create & Drop Database, Create/Drop/Alter Tables, Data Constraints, Insert, Update, Delete, Select",
+  items: [
+    // --- DDL Section ---
+    {"id":1,"q":"Which SQL statement is used to create a new database?","opts":["MAKE DATABASE","CREATE DATABASE","NEW DATABASE","ADD DATABASE"],"answer":1,"topic":"Create/Drop Database"},
+    {"id":2,"q":"Which SQL command deletes an existing database?","opts":["DROP DATABASE","REMOVE DATABASE","DELETE DATABASE","CLEAR DATABASE"],"answer":0,"topic":"Create/Drop Database"},
+    {"id":3,"q":"What is the correct syntax to create a database named myDB_Inventory?","opts":["CREATE DB myDB_Inventory;","NEW DATABASE myDB_Inventory;","CREATE DATABASE myDB_Inventory;","DATABASE CREATE myDB_Inventory;"],"answer":2,"topic":"Create/Drop Database"},
+    {"id":4,"q":"Which command permanently deletes a table and its data?","opts":["REMOVE TABLE","DROP TABLE","DELETE TABLE","CLEAR TABLE"],"answer":1,"topic":"Create/Drop Table"},
+    {"id":5,"q":"Which SQL statement is used to create a new table?","opts":["MAKE TABLE","NEW TABLE","CREATE TABLE","INSERT TABLE"],"answer":2,"topic":"Create/Drop Table"},
+    {"id":6,"q":"Which SQL statement is used to add a new column to an existing table?","opts":["ALTER TABLE ADD column_name datatype;","ADD COLUMN TO TABLE;","UPDATE TABLE column;","INSERT COLUMN"],"answer":0,"topic":"Alter Table"},
+    {"id":7,"q":"Which SQL command is used to change the datatype of a column?","opts":["ALTER TABLE table_name MODIFY column_name DATATYPE;","CHANGE TABLE column;","UPDATE COLUMN TYPE;","ALTER COLUMN DATATYPE;"],"answer":0,"topic":"Alter Table"},
+    {"id":8,"q":"Which command removes a column from an existing table?","opts":["DELETE COLUMN","ALTER TABLE DROP column_name;","REMOVE COLUMN","DROP TABLE column"],"answer":1,"topic":"Alter Table"},
+    {"id":9,"q":"Which constraint ensures a column cannot have NULL values?","opts":["PRIMARY KEY","NOT NULL","UNIQUE","FOREIGN KEY"],"answer":1,"topic":"Constraints"},
+    {"id":10,"q":"Which constraint ensures all values in a column are different?","opts":["NOT NULL","PRIMARY KEY","UNIQUE","CHECK"],"answer":2,"topic":"Constraints"},
+    {"id":11,"q":"Which constraint uniquely identifies each record in a table?","opts":["UNIQUE","PRIMARY KEY","NOT NULL","FOREIGN KEY"],"answer":1,"topic":"Constraints"},
+    {"id":12,"q":"Which constraint establishes a relationship between two tables?","opts":["PRIMARY KEY","FOREIGN KEY","AUTO_INCREMENT","UNIQUE"],"answer":1,"topic":"Constraints"},
+    {"id":13,"q":"Which keyword automatically generates sequential numbers for primary keys?","opts":["AUTO_INCREMENT","AUTO_ID","SERIAL","NEXTVAL"],"answer":0,"topic":"Constraints"},
+    {"id":14,"q":"What will happen if you insert NULL into a NOT NULL column?","opts":["It is converted to 0","The command fails","It is converted to empty string","It is accepted"],"answer":1,"topic":"Constraints"},
+    {"id":15,"q":"Which constraint combines NOT NULL and UNIQUE by default?","opts":["FOREIGN KEY","PRIMARY KEY","AUTO_INCREMENT","CHECK"],"answer":1,"topic":"Constraints"},
+    {"id":16,"q":"Which is the correct syntax to add a UNIQUE constraint on two columns (ID, LastName)?","opts":["CONSTRAINT UC_Person UNIQUE (ID, LastName)","UNIQUE (ID, LastName)","MAKE UNIQUE (ID, LastName)","ID + LastName UNIQUE"],"answer":0,"topic":"Constraints"},
+    {"id":17,"q":"What happens when a FOREIGN KEY value does not exist in the referenced table?","opts":["It inserts NULL","It inserts 0","It fails","It auto-generates"],"answer":2,"topic":"Constraints"},
+    {"id":18,"q":"Which statement creates a table named tblItems with itemId as PRIMARY KEY and AUTO_INCREMENT?","opts":["CREATE TABLE tblItems (itemId INT AUTO_INCREMENT PRIMARY KEY, itemName VARCHAR(100));","CREATE TABLE tblItems (itemId PRIMARY AUTO, itemName VARCHAR(100));","CREATE tblItems (itemId INT PK AUTO, itemName VARCHAR(100));","MAKE TABLE tblItems (itemId AUTO PRIMARY, itemName VARCHAR(100));"],"answer":0,"topic":"Create Table"},
+    {"id":19,"q":"Which SQL statement modifies a table to add a column 'price' as INT not null?","opts":["ALTER TABLE tblItems ADD price INT NOT NULL;","CHANGE TABLE tblItems ADD price INT;","UPDATE tblItems ADD price;","INSERT COLUMN price INTO tblItems;"],"answer":0,"topic":"Alter Table"},
+    {"id":20,"q":"Which SQL constraint ensures referential integrity between related tables?","opts":["UNIQUE","AUTO_INCREMENT","FOREIGN KEY","NOT NULL"],"answer":2,"topic":"Constraints"},
+
+    // --- DML Section ---
+    {"id":21,"q":"Which SQL statement is used to add new rows to a table?","opts":["UPDATE","INSERT","SELECT","DELETE"],"answer":1,"topic":"Insert"},
+    {"id":22,"q":"What happens if you insert a value that violates a column's NOT NULL constraint?","opts":["The value is replaced with 0","The command fails","It is converted to empty string","It is ignored"],"answer":1,"topic":"Insert"},
+    {"id":23,"q":"Which is the correct syntax to insert a row into tblItems with default ID and name 'Dove'?","opts":["INSERT INTO tblItems (itemId,itemName) VALUES (default,'Dove');","INSERT ROW tblItems VALUES ('Dove');","INSERT tblItems ('Dove');","NEW INTO tblItems ('Dove');"],"answer":0,"topic":"Insert"},
+    {"id":24,"q":"Which keyword allows inserting multiple rows in one statement?","opts":["MULTIINSERT","INSERT MANY","VALUES (...) , (...)","INSERT ALL"],"answer":2,"topic":"Insert"},
+    {"id":25,"q":"Which SQL statement is used to change values of existing rows?","opts":["ALTER","UPDATE","MODIFY","CHANGE"],"answer":1,"topic":"Update"},
+    {"id":26,"q":"Which clause is used with UPDATE to modify only specific rows?","opts":["IF","HAVING","WHERE","CASE"],"answer":2,"topic":"Update"},
+    {"id":27,"q":"What will this query do? UPDATE tblItems SET description='Soap' WHERE itemName='Safeguard';","opts":["Deletes rows","Changes description to 'Soap' for rows with itemName 'Safeguard'","Creates a new row","Does nothing"],"answer":1,"topic":"Update"},
+    {"id":28,"q":"Which SQL statement removes rows from a table?","opts":["DROP","DELETE","REMOVE","CLEAR"],"answer":1,"topic":"Delete"},
+    {"id":29,"q":"Which clause should be used with DELETE to avoid removing all rows?","opts":["LIMIT","WHERE","CHECK","HAVING"],"answer":1,"topic":"Delete"},
+    {"id":30,"q":"What happens if you execute DELETE FROM tblItems; without WHERE?","opts":["Only first row deleted","Rows with NULL deleted","All rows deleted","Nothing happens"],"answer":2,"topic":"Delete"},
+    {"id":31,"q":"Which SQL statement retrieves data from a database?","opts":["INSERT","SELECT","SHOW","UPDATE"],"answer":1,"topic":"Select"},
+    {"id":32,"q":"Which symbol is used in SELECT to retrieve all columns from a table?","opts":["#","*","%","ALL"],"answer":1,"topic":"Select"},
+    {"id":33,"q":"Which query retrieves only itemName and description from tblItems?","opts":["SELECT itemName, description FROM tblItems;","SHOW itemName, description FROM tblItems;","GET itemName, description FROM tblItems;","DISPLAY itemName, description tblItems;"],"answer":0,"topic":"Select"},
+    {"id":34,"q":"Which SELECT statement retrieves rows where itemId > 1003?","opts":["SELECT * FROM tblItems WHERE itemId > 1003;","SELECT ALL tblItems itemId > 1003;","GET tblItems WHERE itemId > 1003;","SELECT FROM tblItems WHEN itemId > 1003;"],"answer":0,"topic":"Select"},
+    {"id":35,"q":"Which statement displays all rows and columns from tblItems?","opts":["SELECT * FROM tblItems;","SHOW * FROM tblItems;","DISPLAY ALL tblItems;","GET ALL tblItems;"],"answer":0,"topic":"Select"},
+    {"id":36,"q":"Which keyword is common to UPDATE and DELETE statements to filter rows?","opts":["WHERE","HAVING","CASE","LIMIT"],"answer":0,"topic":"Update/Delete"},
+    {"id":37,"q":"Which of the following is NOT part of SQL DML?","opts":["INSERT","SELECT","DROP","UPDATE"],"answer":2,"topic":"DML Overview"},
+    {"id":38,"q":"Which statement best describes SQL DML?","opts":["Defines database schema","Manipulates and retrieves data","Controls user access","Backs up database"],"answer":1,"topic":"DML Overview"},
+    {"id":39,"q":"What is the result of SELECT itemName, description FROM tblItems WHERE itemId=101;","opts":["All rows displayed","Only the row with itemId=101 is shown","No rows displayed","Table structure shown"],"answer":1,"topic":"Select"},
+    {"id":40,"q":"Which DML command would you use to remove only rows with itemName='Palmolive'?","opts":["DELETE FROM tblItems WHERE itemName='Palmolive';","REMOVE ROW Palmolive;","DROP FROM tblItems Palmolive;","UPDATE tblItems REMOVE Palmolive;"],"answer":0,"topic":"Delete"}
+  ]
+};
